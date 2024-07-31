@@ -24,6 +24,7 @@ const AddTaskScreen = ({ navigation }: any) => {
   // });
 
   const addNewTask = () => {
+    // add the task in the state management
     dispatch(
       addTask({
         id: tasksRedux.length + 1,
@@ -35,6 +36,7 @@ const AddTaskScreen = ({ navigation }: any) => {
         isSynced: false,
       })
     );
+    // add the task in the api
     storeTask({
       id: tasksRedux.length + 1,
       title: taskTitle,
@@ -44,6 +46,9 @@ const AddTaskScreen = ({ navigation }: any) => {
       updatedAt: new Date().toString(),
       isSynced: false,
     });
+
+    // add task to local storage
+
     navigation.goBack();
   };
   return (

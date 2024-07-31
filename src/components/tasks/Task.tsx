@@ -13,6 +13,8 @@ const Task = ({ task, navigation }: { task: TaskModel; navigation: any }) => {
 
   const [isInternetConnected, setIsInternetConnected] = useState(false);
 
+  // check internet connection to decide which edit the task in the database or to the api
+
   // NetInfo.fetch().then((state) => {
   //   if (state) {
   //     setIsInternetConnected(true);
@@ -23,17 +25,27 @@ const Task = ({ task, navigation }: { task: TaskModel; navigation: any }) => {
 
   const makeTaskDone = () => {
     dispatch(editTask({ task: task, newTask: { ...task, status: "done" } }));
+
+    // edit task in the database
+    // edit task in the api
     // if (isInternetConnected) {
     //   updateTask(task.id, { ...task, status: "done" });
     // }
   };
   const makeTaskNotDone = () => {
     dispatch(editTask({ task: task, newTask: { ...task, status: "todo" } }));
+
+    // edit task in the database
+    // edit task in the api
+
     // if (isInternetConnected) {
     //   updateTask(task.id, { ...task, status: "todo" });
     // }
   };
   const deleteTaskAction = () => {
+    // delete task from the database
+    // delete task from the api
+
     // if (isInternetConnected) {
     // deleteTask(task.id);
     // }

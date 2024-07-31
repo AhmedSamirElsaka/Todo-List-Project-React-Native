@@ -33,6 +33,8 @@ const Homescreen = () => {
 
   const netInfo = useNetInfo();
 
+  // check internet connection to fetch data from API or database
+
   // NetInfo.fetch().then((state) => {
   //   if (state) {
   //     setIsInternetConnected(true);
@@ -93,7 +95,13 @@ const Homescreen = () => {
     navigation.navigate("AddTask");
   };
 
-  const manualSync = () => {};
+  const manualSync = () => {
+    if (isInternetConnected) {
+      // fetch all tasks from database
+      // add the unsynced tasks to the api
+    }
+  };
+
   return (
     <View style={style.container}>
       <View style={style.firstInnerContainer}>

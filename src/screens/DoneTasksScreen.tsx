@@ -103,6 +103,7 @@ const DoneTasksScreen = () => {
 
   return (
     <View style={style.container}>
+      a
       <View style={style.firstInnerContainer}>
         <FlatList
           data={tasksRedux}

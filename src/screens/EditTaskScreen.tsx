@@ -24,6 +24,8 @@ const EditTaskScreen = ({ route, navigation }: any) => {
 
   const dispatch = useDispatch();
 
+  // check internet connection to decide which edit the task in the database or to the api
+
   // NetInfo.fetch().then((state) => {
   //   if (state) {
   //     setIsInternetConnected(true);
@@ -32,6 +34,7 @@ const EditTaskScreen = ({ route, navigation }: any) => {
   // });
 
   const addNewTask = () => {
+    // update the task in the state management
     dispatch(
       editTask({
         task: task,
@@ -46,6 +49,7 @@ const EditTaskScreen = ({ route, navigation }: any) => {
       })
     );
 
+    // update the task in the api
     if (isInternetConnected) {
       updateTask(task.id, {
         id: task.id,
@@ -57,6 +61,9 @@ const EditTaskScreen = ({ route, navigation }: any) => {
         isSynced: true,
       });
     }
+
+    // update task in the local storage
+
     navigation.goBack();
   };
   return (

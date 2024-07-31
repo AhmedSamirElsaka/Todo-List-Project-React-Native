@@ -9,10 +9,13 @@ import { TaskModel } from "@/services/database/schemas/TaskSchema";
 import { storeTask } from "@/services/api/TaskApi";
 
 // Initialize network monitoring and sync logic
+
 const syncTasks = () => {
   NetInfo.addEventListener((state) => {
     if (state.isConnected) {
       console.log("Connected");
+      // get data from database
+      // if task is not syncronized then sync it
     }
   });
 };
